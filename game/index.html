@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Court — a duel of lantern-light</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="table">
+  <header id="topbar">
+    <div id="turn-label">Lantern Court</div>
+    <div id="top-actions">
+      <button id="how-btn" type="button">How to play</button>
+      <button id="mute-btn" type="button">🔊 Sound</button>
+    </div>
+  </header>
+
+  <div id="howto" class="hidden">
+    <p><strong>Beat the Duskkeeper.</strong> Each side keeps 20 lanterns of life. On your turn you draw up to five cards and gain 3 wicks of energy. Click a card to play it if you can afford its cost.</p>
+    <p><strong>Resonance:</strong> the second card of a suit you play in one turn, and every one after it, gains +2 to its damage, healing and shield. Commit to one suit and it pays.</p>
+    <p><strong>Read the Duskkeeper:</strong> it announces the suit it gathers before it plays, so a Flame turn means damage is coming and a Grove turn means shields. Answer in kind.</p>
+    <p>Keys: 1–5 play a card, Space ends your turn, M mutes, R restarts after the duel ends.</p>
+  </div>
+
+  <section id="foe-side" class="side"></section>
+
+  <div id="middle">
+    <div id="log" aria-live="polite"></div>
+    <div id="mid-right">
+      <div id="wicks-wrap"><span class="mid-label">Wicks</span><span id="wicks"></span></div>
+      <div id="deck-count"></div>
+      <button id="end-turn" type="button">End turn ⏎</button>
+    </div>
+  </div>
+
+  <section id="player-side" class="side"></section>
+
+  <div id="fx"></div>
+
+  <div id="screen-title" class="overlay">
+    <div class="overlay-card">
+      <div class="title-lanterns">🏮 🏮 🏮</div>
+      <h1>Lantern Court</h1>
+      <p class="tagline">A duel of lantern-light against the Duskkeeper.</p>
+      <p class="title-rules">20 lanterns each. Play cards with wicks. Match suits to resonate. Read the Duskkeeper's intent — then answer it.</p>
+      <button id="start-btn" type="button">Light the court</button>
+      <p class="title-keys">Click a card to play it · 1–5 play · Space ends turn</p>
+    </div>
+  </div>
+
+  <div id="end-screen" class="overlay hidden">
+    <div class="overlay-card">
+      <h1 id="end-title"></h1>
+      <p id="end-sub" class="tagline"></p>
+      <p id="end-stats" class="title-rules"></p>
+      <button id="again-btn" type="button">Light it again</button>
+      <p class="title-keys">or press R</p>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
